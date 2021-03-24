@@ -2,10 +2,10 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import "./App.css";
 import {BrowserRouter, Route} from 'react-router-dom';
-import Home from './components/Home';
-import Login from './components/Login';
-import Profile from './components/Profile';
-import Signup from './components/Signup';
+import Home from './components/screens/Home';
+import Login from './components/screens/Login';
+import Profile from './components/screens/Profile';
+import SignUp from './components/screens/SignUp';
 
 function App() {
   return (
@@ -20,8 +20,8 @@ function App() {
       <Route path="/profile">
         <Profile/>
       </Route>
-      <Route path="signup">
-        <Signup/>
+      <Route path="/signup">
+        <SignUp/>
       </Route>
     </BrowserRouter>
   );
