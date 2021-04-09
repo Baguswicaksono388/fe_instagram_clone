@@ -48,7 +48,7 @@ const CreatePost = () => {
         .then(res => res.json())
             .then(data => {
                 setUrl(data.url) //url dari cloudfire
-            // console.log(data)
+            console.log(data.url)
             }).catch(err => {
             console.log(err)
         })
