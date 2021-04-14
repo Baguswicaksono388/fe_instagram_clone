@@ -7,7 +7,16 @@ const Navbar = () => {
         if (state) {
             return [
                 <li><Link to="/profile">Profile</Link></li>,
-                <li><Link to="/create">Create Post</Link></li>
+                <li><Link to="/create">Create Post</Link></li>,
+                <li>
+                    <button className="btn waves-effect waves-light #c62828 red darken-3" 
+                    onClick={()=>{ 
+                        localStorage.clear()
+                        dispatch({type: "CLEAR"})
+                    }}>
+                        Logout
+                    </button>
+                </li>
             ]
         } else {
             return [
