@@ -1,8 +1,9 @@
 import React,{useContext} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import {UserContext} from '../App'
 const Navbar = () => {
     const { state, dispatch } = useContext(UserContext);
+    const history = useHistory()
     const renderList = () => {
         if (state) {
             return [
@@ -12,7 +13,9 @@ const Navbar = () => {
                     <button className="btn waves-effect waves-light #c62828 red darken-3" 
                     onClick={()=>{ 
                         localStorage.clear()
-                        dispatch({type: "CLEAR"})
+                        dispatch({ type: "CLEAR" })
+                        //untuk mengecek apakah ada token atau tidak
+                        history.push('/signin');
                     }}>
                         Logout
                     </button>
