@@ -41,7 +41,7 @@ const SignUp = () => {
                 <h2>Instagram</h2>
                 <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}></input>
                 <input type="text" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}></input>
-                <input type="text" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
+                <input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}></input>
                 <button className="btn waves-effect waves-light #64b5f6 blue darken-1" onClick={()=>PostData()}>
                     SignUP
                 </button>
