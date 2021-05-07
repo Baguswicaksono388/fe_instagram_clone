@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useContext } from 'react';
+import {UserContext} from '../../App';
 
 const Profile = () => {
     const [mypics, setPics] = useState([])
+    const {state,dispatch} = useContext(UserContext);
     useEffect(() => {
         fetch('/mypost', {
             headers: {
@@ -22,7 +24,7 @@ const Profile = () => {
                         src="https://images.unsplash.com/photo-1616273552294-ae0e1224aaad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=382&q=80"></img>
                 </div>
                 <div>
-                    <h4>Bagus Wicaksono</h4>
+                    <h4>{state?state.name:"loading"}</h4>
                     <div style={{display:"flex", justifyContent:"space-between", width:"108%"}}>
                         <h6>40 posts</h6>
                         <h6>40 followers</h6>
